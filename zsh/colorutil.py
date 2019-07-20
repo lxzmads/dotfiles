@@ -107,4 +107,4 @@ def rand_hsl(seed):
 
 if __name__ == "__main__":
     rgb = rand_hsl(sys.argv[1])
-    print(rgb[0] + " " + rgb[1] + " " + rgb[2)
+    print(rgb[0] + " " + rgb[1] + " " + rgb[2])
