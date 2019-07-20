@@ -124,3 +124,15 @@ function git-count(){
     cloc temprepo &&
     rm -rf temprepo
 }
+
+# Set up terminal proxy
+proxyon(){
+    local proxy=$(cat ./proxy.custom.sh | cut -d "=" -f2)
+    export http_proxy=$proxy
+    export https_proxy=$proxy
+}
+
+proxyoff(){
+    export http_proxy=""
+    export https_proxy=""
+}

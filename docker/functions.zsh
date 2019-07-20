@@ -2,9 +2,10 @@ da(){
   docker exec -it $1 bash
 }
 dproxyon(){
-  if [ -f ~/.docker/config.json ]; then
-    python -c "import json;f=open('./config.json', 'r');c=json.loads(f.read());f.close();f=open('./config.json', 'w');c['proxies']={};c['proxies']['default']={};c['proxies']['default']['httpProxy']='http://127.0.0.1:2333';c['proxies']['default']['httpsProxy']='http://127.0.0.1:2333';f.write(json.dumps(c));f.close()"
-  fi
+    local proxy=$(cat ./proxy.custom.sh | cut -d "=" -f2)
+    if [ -f ~/.docker/config.json ]; then
+    python -c "import json;f=open('./config.json', 'r');c=json.loads(f.read());f.close();f=open('./config.json', 'w');c['proxies']={};c['proxies']['default']={};c['proxies']['default']['httpProxy']='${proxy}';c['proxies']['default']['httpsProxy']='${proxy}';f.write(json.dumps(c));f.close()"
+    fi
 }
 dproxyoff(){
   if [ -f ~/.docker/proxy.json ]; then
