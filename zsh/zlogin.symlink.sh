@@ -1,4 +1,5 @@
 source ./utils.zsh
+source ./colors.zsh
 # Restore session tab color
 if [ -n "$IT2_SESSION_COLOR" ]; then
     export IT2_SESSION_COLOR_BEFORE=$IT2_SESSION_COLOR
@@ -7,7 +8,8 @@ if [ -n "$IT2_SESSION_COLOR" ]; then
 else
     # Change iterm2's tab color automatically
     hostmd5=$(hostname | md5sum || md5sum );
-    colorhex=$(echo ${hostmd5:0:6} | tr a-z A-Z);
-    it2-tab-color $colorhex
+    colorseed=$(16#${hostmd5:0:4});
+    colorrgb=$(python -c "from colorutil import rand_hsl;rand_hsl(10);")
+    it2-tab-color $colorrgb
     # clear
 fi
