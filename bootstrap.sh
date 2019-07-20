@@ -2,8 +2,6 @@
 #
 # bootstrap installs things.
 # Stealed from holman/dotfiles. :)
-
-cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
 set -e
