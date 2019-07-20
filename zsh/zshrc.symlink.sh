@@ -1,5 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
+export ZSH=$HOME/.oh-my-zsh
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Documents/Projects
@@ -7,7 +8,6 @@ export PROJECTS=~/Documents/Projects
 # customize zsh custom directory.
 export ZSH_CUSTOM=$ZSH/oh-my-zsh
 
-ZSH_THEME="mads"
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
