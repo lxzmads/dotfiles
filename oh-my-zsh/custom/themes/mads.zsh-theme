@@ -2,7 +2,7 @@
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     PROMPT='%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[cyan]%}%(5~|%~
-    |%~)%{$reset_color%}$(git_prompt_info)%# '
+|%~)%{$reset_color%}$(git_prompt_info)%# '
 
     ZSH_THEME_GIT_PROMPT_PREFIX=" → %{$fg[green]%}"
     ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -22,7 +22,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 else
     PROMPT='[%n@%m:%(5~|%~
-    |%~)$(git_prompt_info)]%# '
+|%~)$(git_prompt_info)]%# '
 
     ZSH_THEME_GIT_PROMPT_PREFIX=" →"
     ZSH_THEME_GIT_PROMPT_SUFFIX=""
