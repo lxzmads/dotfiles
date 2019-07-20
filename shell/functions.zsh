@@ -127,7 +127,7 @@ function git-count(){
 
 # Set up terminal proxy
 proxyon(){
-    local proxy=$(cat ./proxy.custom.sh | cut -d "=" -f2)
+    local proxy=$(cat $DOTFILES/shell/proxy.custom.sh | cut -d "=" -f2)
     export http_proxy=$proxy
     export https_proxy=$proxy
 }
