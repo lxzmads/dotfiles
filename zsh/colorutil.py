@@ -101,9 +101,7 @@ def rand_hsl(seed):
     h = random.uniform(0.02, 0.31) + random.choice([0, 1/3.0,2/3.0])
     l = random.uniform(0.3, 0.8)
     s = random.uniform(0.3, 0.8)
-
-    print(h,l,s)
-
+    
     rgb = hsl_to_rgb(h, l, s)
     return int(rgb[0]*256), int(rgb[1]*256), int(rgb[2]*256)
 
