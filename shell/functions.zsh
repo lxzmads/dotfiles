@@ -136,3 +136,35 @@ proxyoff(){
     export http_proxy=""
     export https_proxy=""
 }
+
+# Set up iterm2's tab color chain.
+ssh(){
+    if [[ $# > 1 ]]; then
+        if [[ ! $@[$(( $# - 1 ))] =~ "-" ]]; then
+            if [[ $@[$(( $# - 2 ))] =~ "-" ]]; then
+                if [[ "46AaCfGgKkMNnqsTtVvXxYy" =~ ${$@[$(( $# - 2 ))]:1} ]]; then
+                    ssh $@
+                else
+                    ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+                    ssh $@
+                fi
+            else
+                if [[ $@[$(( $# - 2 ))] =~ "ssh" ]]; then
+                    ssh $@
+                else
+                    if [[ $@[$(( $# - 3 ))] =~ "-" ]]; then
+                        ssh $@
+                    else
+                        ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+                        ssh $@
+                    fi
+                fi
+        else
+            ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+            ssh $@
+        fi
+    else
+        ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+        ssh $@
+    fi
+}

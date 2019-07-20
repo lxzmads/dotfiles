@@ -58,6 +58,7 @@ it2-tab-color() {
             return
             ;;
     esac
+    echo -ne "\033]6;1;bg;*;default\a"
     echo -ne "\033]6;1;bg;red;brightness;$R\a"
     echo -ne "\033]6;1;bg;green;brightness;$G\a"
     echo -ne "\033]6;1;bg;blue;brightness;$B\a"
