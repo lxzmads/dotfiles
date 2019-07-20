@@ -5,9 +5,9 @@ if [ -n "$IT2_SESSION_COLOR" ]; then
     # clear
 else
     # Change iterm2's tab color automatically
-    hostmd5=$(hostname | md5sum || md5sum );
+    hostmd5=$(hostname | md5 || md5sum );
     colorseed=$((16#${hostmd5:0:4}));
-    colorrgb=$(python $DOTFILES/zsh/colorutil.py $colorseed)
+    colorrgb=$(python3 $DOTFILES/zsh/colorutil.py $colorseed)
     it2-tab-color $colorrgb
     # clear
 fi
