@@ -138,34 +138,36 @@ proxyoff(){
 }
 
 # Set up iterm2's tab color chain.
-ssh(){
-    if [[ $# > 1 ]]; then
+ssh_(){
+    if (( $# > 2 )); then
         if [[ ! $@[$(( $# - 1 ))] =~ "-" ]]; then
-            if [[ $@[$(( $# - 2 ))] =~ "-" ]]; then
-                if [[ "46AaCfGgKkMNnqsTtVvXxYy" =~ ${$@[$(( $# - 2 ))]:1} ]]; then
+            SECOND_P=$@[$(( $# - 2 ))]
+            if [[ $SECOND_P =~ "-" ]]; then
+                if [[ "46AaCfGgKkMNnqsTtVvXxYy" =~ ${SECOND_P:1} ]]; then
                     ssh $@
                 else
                     ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
                     ssh $@
                 fi
             else
-                if [[ $@[$(( $# - 2 ))] =~ "ssh" ]]; then
-                    ssh $@
-                else
-                    if [[ $@[$(( $# - 3 ))] =~ "-" ]]; then
-                        ssh $@
-                    else
-                        ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
-                        ssh $@
-                    fi
-                fi
+                ssh $@
             fi
         else
             ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
             ssh $@
         fi
     else
-        ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
-        ssh $@
+        if (( $# == 1 )); then
+            ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+            ssh $@
+        else
+            if [[ ! $@[$(( $# - 1 ))] =~ "-" ]]; then
+                ssh $@
+            else
+                ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+                ssh $@
+            fi
+        fi
     fi
 }
+alias ssh=ssh_

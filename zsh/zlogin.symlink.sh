@@ -1,6 +1,6 @@
 # Restore session tab color
 if [[ -f /tmp/.madstmpcolor ]]; then
-    export IT2_SESSION_COLOR_BEFORE=$(cat /tmp/.madstmpcolor)
+    export IT2_SESSION_COLOR_BEFORE=($(cat /tmp/.madstmpcolor))
     rm -rf /tmp/.madstmpcolor
 fi
 # Change iterm2's tab color automatically
