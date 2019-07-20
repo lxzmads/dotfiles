@@ -1,5 +1,5 @@
 from __future__ import print_function
-import math, random
+import math, random, sys
 
 def rgb_to_hsv(r, g, b):
     r = float(r)
@@ -103,4 +103,7 @@ def rand_hsl(seed):
     s = random.uniform(0.3, 0.8)
 
     rgb = hsl_to_rgb(h, l, s)
-    print(int(rgb[0]*256), int(rgb[1]*256), int(rgb[2]*256))
+    return int(rgb[0]*256), int(rgb[1]*256), int(rgb[2]*256)
+
+if __name__ == "__main__":
+    print(rand_hsl(sys.argv[1]))
