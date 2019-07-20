@@ -159,6 +159,7 @@ ssh(){
                         ssh $@
                     fi
                 fi
+            fi
         else
             ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
             ssh $@
