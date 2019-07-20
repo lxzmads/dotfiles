@@ -11,7 +11,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # customize zsh custom directory.
-export ZSH_CUSTOM=$ZSH/oh-my-zsh/custom
+ZSH_CUSTOM=$ZSH/oh-my-zsh/custom
 
 ZSH_THEME="mads"
 
