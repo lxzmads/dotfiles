@@ -70,7 +70,7 @@ if [ -n "$IT2_SESSION_COLOR" ]; then
 else
     # Change iterm2's tab color automatically
     hostmd5=$(hostname | md5sum || md5sum );
-    colorhex=$(echo ${hostfp:0:6} | tr a-z A-Z);
-    it2-tab-color colorhex
+    colorhex=$(echo ${hostmd5:0:6} | tr a-z A-Z);
+    it2-tab-color $colorhex
     # clear
 fi
