@@ -4,7 +4,7 @@ da(){
 dproxyon(){
     local proxy=$(cat $DOTFILES/shell/proxy.custom.sh | cut -d "=" -f2)
     if [ -f ~/.docker/config.json ]; then
-    python -c "import json;f=open('./config.json', 'r');c=json.loads(f.read());f.close();f=open('./config.json', 'w');c['proxies']={};c['proxies']['default']={};c['proxies']['default']['httpProxy']='${proxy}';c['proxies']['default']['httpsProxy']='${proxy}';f.write(json.dumps(c));f.close()"
+    python -c "import json;f=open('~/.docker/config.json', 'r');c=json.loads(f.read());f.close();f=open('~/.docker/config.json', 'w');c['proxies']={};c['proxies']['default']={};c['proxies']['default']['httpProxy']='${proxy}';c['proxies']['default']['httpsProxy']='${proxy}';f.write(json.dumps(c));f.close()"
     fi
 }
 dproxyoff(){
