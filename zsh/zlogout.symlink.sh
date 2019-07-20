@@ -1,4 +1,3 @@
-source ./utils.zsh
 # Restore iterm's tab color to default.
 # Restore session tab color
 it2-tab-reset
