@@ -8,9 +8,6 @@ else # macOS `ls`
     colorflag="-G"
 fi
 
-# use nvim, but don't make me think about it
-alias vim="nvim"
-
 # Filesystem aliases
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -33,7 +30,7 @@ alias df='df -h' # disk free, in Gigabytes, not bytes
 alias du='du -h -c' # calculate disk usage for a folder
 
 # Applications for Mac
-if dotfiles::is_osx ; then
+if [[ "$(uname)" == "Darwin" ]] ; then
 alias ios='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # Kill all the tabs in Chrome to free up memory
@@ -51,7 +48,7 @@ fi
 # IP addresses
 alias ip="curl ip.gs"
 alias localip="hostname -I"
-dotfiles::is_osx && alias localip="ipconfig getifaddr en1"
+[[ "$(uname)" == "Darwin" ]] && alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Flush Directory Service cache

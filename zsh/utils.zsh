@@ -21,7 +21,3 @@ dotfiles::print() {
     echo -n "$content"
     echo -n "%{%b%f%}"
 }
-
-dotfiles::is_osx(){
-    [[ "$(uname)" == "Darwin" ]]; 
-}

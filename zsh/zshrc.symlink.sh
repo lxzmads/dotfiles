@@ -7,6 +7,7 @@ export PROJECTS=~/Documents/Projects
 # customize zsh custom directory.
 export ZSH_CUSTOM=$ZSH/oh-my-zsh
 
+ZSH_THEME="mads"
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
