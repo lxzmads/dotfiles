@@ -15,4 +15,6 @@ ZSH_CUSTOM=$DOTFILES/oh-my-zsh/custom
 
 ZSH_THEME="mads"
 
+plugins=(autojump)
+
 source $ZSH/oh-my-zsh.sh
