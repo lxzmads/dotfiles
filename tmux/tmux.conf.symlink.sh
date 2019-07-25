@@ -8,9 +8,9 @@ set -g history-limit 20000
 set -g renumber-windows on
 
 # # unbind default prefix and set it to Ctrl+a
-# unbind C-b
-# set -g prefix C-a
-# bind C-a send-prefix
+unbind C-b
+set -g prefix C-z
+bind C-z send-prefix
 
 # for nested tmux sessions
 # bind-key a send-prefix

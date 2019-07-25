@@ -1,7 +1,7 @@
 # gitconfig
 [user]
-    name = Mads Liu
-    email = lxzmads@gmail.com
+	name = Mads Liu
+	email = lxzmads@gmail.com
 [github]
     user = lxzmads
 [alias]
@@ -165,3 +165,8 @@
 [pager]
     diff = "diff-so-fancy | less --tabs=4 -RFX"
     show = "diff-so-fancy | less --tabs=4 -RFX"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
