@@ -46,7 +46,6 @@ alias pcat='pygmentize -f terminal256 -O style=native -g'
 alias xsschrome="chromekill && '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --disable-xss-auditor --enable-devtools-experiments --disable-features=enable-automatic-password-saving"
 fi
 # IP addresses
-alias ip="curl ip.gs"
 alias localip="hostname -I"
 [[ "$(uname)" == "Darwin" ]] && alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
