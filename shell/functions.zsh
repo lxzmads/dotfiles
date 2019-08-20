@@ -133,10 +133,16 @@ proxyon(){
 }
 
 proxyoff(){
-    export http_proxy=""
-    export https_proxy=""
+    unset http_proxy
+    unset https_proxy
 }
-
+proxystatus(){
+    if [[ -n $http_proxy ]];then
+        echo -e "Proxy: on"
+    else
+        echo "Proxy: off"
+    fi
+}
 # Set up iterm2's tab color chain.
 ssh_(){
     if (( $# > 2 )); then

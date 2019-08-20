@@ -9,7 +9,7 @@ dproxyon(){
 }
 dproxyoff(){
   if [ -f ~/.docker/proxy.json ]; then
-      python -c "import json;f=open('$HOME/.docker/config.json', 'r');c=json.loads(f.read());f.close();f=open('$HOME~/.docker/config.json', 'w');c.pop('proxies',None);f.write(json.dumps(c));f.close()"
+      python -c "import json;f=open('$HOME/.docker/config.json', 'r');c=json.loads(f.read());f.close();f=open('$HOM/.docker/config.json', 'w');c.pop('proxies',None);f.write(json.dumps(c));f.close()"
   fi
 }
 function dsm(){ docker stop $1 && docker rm $1 || echo "failed!!!";}
