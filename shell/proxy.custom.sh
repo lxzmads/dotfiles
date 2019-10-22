@@ -1,1 +1,2 @@
-http_proxy=http://192.168.1.100:2333
+http_proxy=http://172.17.0.1:2333
+

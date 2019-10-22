@@ -79,3 +79,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
 done
+
+# for typora
+alias note="open -a Typora"
+alias dra="open -a Typora /Users/mads/Library/Mobile\ Documents/com~apple~CloudDocs/Notes/草稿/"
