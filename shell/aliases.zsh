@@ -82,3 +82,6 @@ done
 # for typora
 alias note="open -a Typora"
 alias dra="open -a Typora /Users/mads/Library/Mobile\ Documents/com~apple~CloudDocs/Notes/草稿/"
+
+# shortcut
+alias genpass="openssl rand -base64 16"
