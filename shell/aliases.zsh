@@ -13,10 +13,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias dr="cd ~/Documents/Drafts"
+alias dr="cd ~/OneDrive/My/Drafts"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias d="cd ~/Documents"
 
 alias l="ls -lah ${colorflag}"
 alias la="ls -AF ${colorflag}"
