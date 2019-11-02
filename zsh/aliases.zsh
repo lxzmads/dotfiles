@@ -32,6 +32,10 @@ alias du='du -h -c' # calculate disk usage for a folder
 if [[ "$(uname)" == "Darwin" ]] ; then
 alias ios='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
+# clipboard
+alias y="pbcopy"
+alias p="pbpaste"
+
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"

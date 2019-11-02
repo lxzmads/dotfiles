@@ -2,7 +2,7 @@
 export DOTFILES=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Documents/Projects
+export PROJECTS=$HOME/OneDrive/My/Projects
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but

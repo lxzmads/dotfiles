@@ -7,3 +7,7 @@ This dotfile project steals many awesome ideas from other various dotfile projec
 ### Configurability
 
 !TODO
+
+# ”victims“
+
+- https://github.com/holman/dotfiles

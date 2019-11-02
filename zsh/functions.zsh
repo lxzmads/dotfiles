@@ -2,10 +2,6 @@
 # functions
 ####################
 
-pretty() {
-    pygmentize -f terminal256 $* | less -R
-}
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
@@ -15,13 +11,6 @@ function server() {
     python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-# get gzipped size
-function gz() {
-    echo "orig size    (bytes): "
-    cat "$1" | wc -c
-    echo "gzipped size (bytes): "
-    gzip -c "$1" | wc -c
-}
 
 # All the dig info
 function digga() {
@@ -38,15 +27,6 @@ function escape() {
 function unidecode() {
     perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
     echo # newline
-}
-
-# Create a git.io short URL
-function gitio() {
-	if [ -z "${1}" -o -z "${2}" ]; then
-		echo "Usage: \`gitio slug url\`";
-		return 1;
-	fi;
-	curl -i http://git.io/ -F "url=${2}" -F "code=${1}";
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -77,28 +57,6 @@ function targz() {
 	echo "${tmpFile}.gz created successfully.";
 }
 
-# Determine size of a file or total size of a directory
-function fs() {
-	if du -b /dev/null > /dev/null 2>&1; then
-		local arg=-sbh;
-	else
-		local arg=-sh;
-	fi
-	if [[ -n "$@" ]]; then
-		du $arg -- "$@";
-	else
-		du $arg .[^.]* *;
-	fi;
-}
-
-# Use Git’s colored diff when available
-hash git &>/dev/null;
-if [ $? -eq 0 ]; then
-	function diff() {
-		git diff --no-index --color-words "$@";
-	}
-fi;
-
 # Create a data URL from a file
 function dataurl() {
 	local mimeType=$(file -b --mime-type "$1");
@@ -106,15 +64,6 @@ function dataurl() {
 		mimeType="${mimeType};charset=utf-8";
 	fi
 	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
-}
-
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-	local port="${1:-4000}";
-	local ip=$(ipconfig getifaddr en1);
-	sleep 1 && open "http://${ip}:${port}/" &
-	php -S "${ip}:${port}";
 }
 
 # Count git repo's summaries.
@@ -127,17 +76,14 @@ function git-count(){
 
 # Set up terminal proxy
 proxyon(){
-    local proxy=$(cat $DOTFILES/shell/proxy.custom.sh | cut -d "=" -f2)
-    export http_proxy=$proxy
-    export https_proxy=$proxy
+    export $ALL_PROXY=$MPROXY
 }
 
 proxyoff(){
-    unset http_proxy
-    unset https_proxy
+    unset ALL_PROXY
 }
 proxystatus(){
-    if [[ -n $http_proxy ]];then
+    if [[ -n $ALL_PROXY ]];then
         echo -e "Proxy: on"
     else
         echo "Proxy: off"
