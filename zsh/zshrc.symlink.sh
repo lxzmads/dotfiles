@@ -1,3 +1,13 @@
+# Execute tmux if available and if we have some configuration for it
+[ -t 1 ] && (( $+commands[tmux] )) && \
+      [[ -f ~/.tmux.conf && \
+               $PPID != 1 && \
+               $$ != 1 && \
+               $TERM != dumb &&
+               $TERM != linux && \
+               $TERM != screen* && \
+               -z $TMUX ]] && \
+      exec tmux
 # shortcut to this dotfiles path is $ZSH
 export DOTFILES=$HOME/.dotfiles
 

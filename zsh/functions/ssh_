@@ -1,0 +1,32 @@
+ssh_(){
+    if (( $# > 2 )); then
+        if [[ ! $@[$(( $# - 1 ))] =~ "-" ]]; then
+            SECOND_P=$@[$(( $# - 2 ))]
+            if [[ $SECOND_P =~ "-" ]]; then
+                if [[ "46AaCfGgKkMNnqsTtVvXxYy" =~ ${SECOND_P:1} ]]; then
+                    ssh $@
+                else
+                    ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+                    ssh $@
+                fi
+            else
+                ssh $@
+            fi
+        else
+            ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+            ssh $@
+        fi
+    else
+        if (( $# == 1 )); then
+            ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+            ssh $@
+        else
+            if [[ ! $@[$(( $# - 1 ))] =~ "-" ]]; then
+                ssh $@
+            else
+                ssh $@ "echo $IT2_SESSION_COLOR > /tmp/.madstmpcolor"
+                ssh $@
+            fi
+        fi
+    fi
+}

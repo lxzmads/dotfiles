@@ -17,7 +17,7 @@ setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
 # setopt IGNORE_EOF
-
+setopt EXTENDEDGLOB
 setopt APPEND_HISTORY # adds history
 setopt complete_aliases
 

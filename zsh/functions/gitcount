@@ -1,0 +1,4 @@
+git clone -q --depth 1 "$1" temprepo &&
+printf "('tempgit' will be deleted automatically)\n\n\n" &&
+cloc temprepo &&
+rm -rf temprepo
