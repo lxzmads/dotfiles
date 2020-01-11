@@ -39,5 +39,3 @@ do
 done
 
 unset config_files
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
