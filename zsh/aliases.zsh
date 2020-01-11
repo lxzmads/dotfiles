@@ -13,10 +13,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias dr="cd ~/OneDrive/My/Drafts"
+alias pl="cd ~/OneDrive/My/Playground"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 
+alias ls="ls ${colorflag}"
 alias l="ls -lah ${colorflag}"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
@@ -50,15 +51,15 @@ alias xsschrome="chromekill && '/Applications/Google Chrome.app/Contents/MacOS/G
 fi
 # IP addresses
 alias localip="hostname -I"
-[[ "$(uname)" == "Darwin" ]] && alias localip="ipconfig getifaddr en1"
+[[ "$(uname)" == "Darwin" ]] && alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Trim new lines and copy to clipboard
 alias trimcopy="tr -d '\n' | pbcopy"
@@ -84,8 +85,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # for typora
-alias note="open -a Typora"
-alias dra="open -a Typora /Users/mads/Library/Mobile\ Documents/com~apple~CloudDocs/Notes/草稿/"
+alias dra="open -a Typora /Users/mads/OneDrive/My/Draft"
 
 # shortcut
 alias genpass="openssl rand -base64 16 | tee /dev/tty | pbcopy"

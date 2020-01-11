@@ -9,7 +9,7 @@ set -g renumber-windows on
 
 # # unbind default prefix and set it to Ctrl+a
 unbind C-b
-set -g prefix C-z
+set -g prefix C-b
 bind C-b send-prefix
 
 # for nested tmux sessions

@@ -8,7 +8,8 @@ export LESS_TERMCAP_md="${yellow}"
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-export MPROXY="http://172.20.10.2:2333"
+export MPROXY="http://172.16.77.1:2333"
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/opt/apache-maven/bin:$PATH"

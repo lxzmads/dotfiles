@@ -2,7 +2,7 @@ da(){
   docker exec -it $1 bash
 }
 dproxyon(){
-    local proxy=$(cat $DOTFILES/docker/proxy.ini | cut -d "=" -f2)
+    local proxy=$(cat $DOTFILES/local/docker_proxy.ini | cut -d "=" -f2)
     if [ -f ~/.docker/config.json ]; then
     python -c "import json;f=open('$HOME/.docker/config.json', 'r');c=json.loads(f.read());f.close();f=open('$HOME/.docker/config.json', 'w');c['proxies']={};c['proxies']['default']={};c['proxies']['default']['httpProxy']='${proxy}';c['proxies']['default']['httpsProxy']='${proxy}';f.write(json.dumps(c));f.close()"
     fi
@@ -15,8 +15,7 @@ dproxyoff(){
 function dsm(){ docker stop $1 && docker rm $1 || echo "failed!!!";}
 function mc(){ ssh root@$1 }
 function me_con() { docker run -it --rm -v `pwd`:/home $1 }
-function me_ubuntu() { docker run -it --rm -v `pwd`:/home ubuntu:14.04 }
-function me_kali() { docker run -it --rm -v `pwd`:/home kali:top10}    
+function me_ubuntu() { docker run -it --rm -v `pwd`:/home ubuntu:$1 }
 function me_stego() { docker run -it --rm -p 127.0.0.1:6901:6901 -v `pwd`:/data dominicbreuker/stego-toolkit bash }
 function me_pwn(){ 
     docker run -it --rm -v `pwd`:/ctf/work -p23946:23946 --cap-add=SYS_PTRACE lxzmads/pwndbgenv:14.04

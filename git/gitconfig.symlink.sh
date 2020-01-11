@@ -1,6 +1,6 @@
 # gitconfig
 [user]
-	name = Mads Liu
+	name = Shon Lau
 	email = lxzmads@gmail.com
 [github]
     user = lxzmads

@@ -1,1 +1,1 @@
-autoload -Uz vl vn vo
+autoload -Uz vl vn vo vp
