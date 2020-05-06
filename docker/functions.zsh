@@ -1,6 +1,9 @@
 da(){
   docker exec -it $1 bash
 }
+de(){
+    docker exec $1 $2
+}
 dproxyon(){
     local proxy=$(cat $DOTFILES/local/docker_proxy.ini | cut -d "=" -f2)
     if [ -f ~/.docker/config.json ]; then

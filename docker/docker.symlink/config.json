@@ -1,12 +1,6 @@
 {
+  "credsStore" : "desktop",
   "auths" : {
 
-  },
-  "credsStore" : "desktop",
-  "proxies" : {
-    "default" : {
-      "httpsProxy" : "http://172.16.77.1:2333",
-      "httpProxy" : "http://172.16.77.1:2333"
-    }
   }
 }
