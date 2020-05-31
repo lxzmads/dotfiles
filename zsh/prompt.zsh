@@ -18,4 +18,4 @@ RPROMPT='%(?..%F{red}-> %?%f)'
 
 # Allow exported PS1 variable to override default prompt.
 
-PROMPT='%F{32}%T%f %F{yellow}%n%f%F{70}@%M%f%F{46}:%f%F{cyan}%~%f$(git_prompt_info)${_newline}%f%F{32}%#%f '
+PROMPT='%F{32}%T%f %F{yellow}%n%f%F{70}@%m%f(%F{red}$(cat /tmp/myip)%f)%F{46}:%f%F{cyan}%~%f$(git_prompt_info)${_newline}%f%F{32}%#%f '

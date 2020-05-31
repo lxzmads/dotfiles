@@ -85,7 +85,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # for typora
-alias dra="open -a Typora /Users/mads/OneDrive/My/Draft"
+alias note="open -a Typora '/Users/mads/Library/Mobile Documents/com~apple~CloudDocs/TypoNote/Notebooks/'"
 
 # shortcut
 alias genpass="openssl rand -base64 16 | tee /dev/tty | pbcopy"

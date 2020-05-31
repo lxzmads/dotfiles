@@ -17,13 +17,13 @@ dproxyoff(){
 }
 function dsm(){ docker stop $1 && docker rm $1 || echo "failed!!!";}
 function mc(){ ssh root@$1 }
-function me_con() { docker run -it --rm -v `pwd`:/home $1 }
-function me_ubuntu() { docker run -it --rm -v `pwd`:/home ubuntu:$1 }
-function me_stego() { docker run -it --rm -p 127.0.0.1:6901:6901 -v `pwd`:/data dominicbreuker/stego-toolkit bash }
-function me_pwn(){ 
+function md_con() { docker run -it --rm -v `pwd`:/home $1 }
+function md_ubuntu() { docker run -it --rm -v `pwd`:/home ubuntu:$1 }
+function md_stego() { docker run -it --rm -p 127.0.0.1:6901:6901 -v `pwd`:/data dominicbreuker/stego-toolkit bash }
+function md_pwn(){ 
     docker run -it --rm -v `pwd`:/ctf/work -p23946:23946 --cap-add=SYS_PTRACE lxzmads/pwndbgenv:14.04
 }
-function me_php(){
+function md_php(){
     if (( $# != 2 )); then
         echo "Usage:  me php <port> <version>";
     else
@@ -34,7 +34,7 @@ function me_php(){
     fi
 }
 
-function me:usage(){
+function md:usage(){
     echo "Usage:  me COMMAND
             
     Make a BRAND NEW CLEAN SELF DESTRUCTION environment or mads' env, whatever :)
@@ -49,25 +49,25 @@ function me:usage(){
     ";
 }
 
-function me(){ 
+function md(){ 
     if (( $# < 1 )); then
-        me:usage;
+        md:usage;
     else
         case $1 in 
             php)
-                me_php $2 $3;;     
+                md_php $2 $3;;     
             kali)
-                me_kali;;
+                md_kali;;
             pwn)
-                me_pwn;;
+                md_pwn;;
             stego)
-                me_stego;;
+                md_stego;;
             ubuntu)
-                me_ubuntu;;
+                md_ubuntu $2;;
             con)
-                me_con $2;;
+                md_con $2;;
             *)
-                me:usage;;
+                md:usage;;
         esac
     fi
 }

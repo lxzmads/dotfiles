@@ -1,4 +1,5 @@
 # Set up terminal proxy
+# Virtual Network Environment.
 proxyon(){
     export ALL_PROXY=$MPROXY
 }
@@ -8,8 +9,8 @@ proxyoff(){
 }
 proxystatus(){
     if [[ -n $ALL_PROXY ]];then
-        echo -e "Proxy: on"
+        echo -e "on"
     else
-        echo "Proxy: off"
+        echo "off"
     fi
 }

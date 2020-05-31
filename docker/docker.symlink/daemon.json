@@ -1,8 +1,1 @@
-{
-  "debug" : true,
-  "experimental" : false,
-"insecure-registries": [
-      "124.16.75.161:422"
-  ]
-}
-
+{"debug":true,"experimental":false,"insecure-registries":["124.16.75.161:422"]}
