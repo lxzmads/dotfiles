@@ -152,8 +152,6 @@
 [grep]
     extendRegexp = true
     lineNumber = true
-[credential]
-	helper = osxkeychain
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
@@ -170,5 +168,3 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[http "http://172.22.201.104:3000"]
-	proxy = http://10.10.20.209:23333
