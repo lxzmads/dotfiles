@@ -5,4 +5,4 @@
 vn
 
 # ip
-curl -s ip.sb > /tmp/myip
+# curl -s ip.sb > /tmp/myip

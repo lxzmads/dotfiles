@@ -86,6 +86,7 @@ done
 
 # for typora
 alias note="open -a Typora '/Users/mads/Library/Mobile Documents/com~apple~CloudDocs/TypoNote/Notebooks/'"
+alias tp="open -a Typora ."
 
 # shortcut
 alias genpass="openssl rand -base64 16 | tee /dev/tty | pbcopy"
