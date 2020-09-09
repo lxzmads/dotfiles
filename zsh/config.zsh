@@ -27,6 +27,7 @@ bindkey '^[[1;5C' forward-word
 bindkey '^R' history-incremental-search-backward
 bindkey '^U' backward-kill-line
 autoload edit-command-line
+autoload -U select-word-style select-word-style bash
 zle -N edit-command-line
 bindkey '^Xe' edit-command-line
 

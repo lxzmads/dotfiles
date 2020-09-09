@@ -1,7 +1,7 @@
 {
-  "credsStore" : "desktop",
+  "experimental" : "disabled",
   "auths" : {
 
   },
-  "experimental" : "disabled"
+  "credsStore" : "desktop"
 }

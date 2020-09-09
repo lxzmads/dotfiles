@@ -17,7 +17,7 @@ dproxyoff(){
 }
 function dsm(){ docker stop $1 && docker rm $1 || echo "failed!!!";}
 function mc(){ ssh root@$1 }
-function md_con() { docker run -it --rm -v `pwd`:/home $1 }
+function md_con() { docker run -it --rm -v `pwd`:/home -w /home $1 }
 function md_ubuntu() { docker run -it --rm -v `pwd`:/home ubuntu:$1 }
 function md_stego() { docker run -it --rm -p 127.0.0.1:6901:6901 -v `pwd`:/data dominicbreuker/stego-toolkit bash }
 function md_pwn(){ 

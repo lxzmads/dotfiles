@@ -13,9 +13,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias pl="cd ~/OneDrive/My/Playground"
+alias pl="cd $HOME_DOCPREFIX/0/UNKNOWNPLAYGROUND/CODE"
+alias blog="cd /Users/mads/OneDrive/0/STUDY/Projects/Development/Mine/blog"
+alias d="cd $HOME_DOCPREFIX/0/"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias sc="rsync -e ssh -avh --delete --no-owner --no-group"
 
 alias ls="ls ${colorflag}"
 alias l="ls -lah ${colorflag}"
@@ -32,6 +35,7 @@ alias du='du -h -c' # calculate disk usage for a folder
 # Applications for Mac
 if [[ "$(uname)" == "Darwin" ]] ; then
 alias ios='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 # clipboard
 alias y="pbcopy"
