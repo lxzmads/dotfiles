@@ -37,7 +37,7 @@ function md_tomcat(){
     if (( $# != 2 )); then
         echo "Usage:  md tomcat <port> <version>";
     else
-        docker run -dit --name tomcat-$2 -v `pwd`:/var/www/html -p $1:8080 tomcat:$2;
+        docker run -dit --name tomcat-$2 -v `pwd`:/usr/local/tomcat/webapps -p $1:8080 tomcat:$2;
         if (( $? == 0 ));then
             open -a "Google Chrome" "http://localhost:$1";
         fi
