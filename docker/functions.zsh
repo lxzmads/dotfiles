@@ -25,7 +25,7 @@ function md_pwn(){
 }
 function md_php(){
     if (( $# != 2 )); then
-        echo "Usage:  me php <port> <version>";
+        echo "Usage:  md php <port> <version>";
     else
         docker run -d --name php-$2 -v `pwd`:/var/www/html -p $1:80 php:$2-apache;
         if (( $? == 0 ));then
@@ -33,17 +33,27 @@ function md_php(){
         fi
     fi
 }
+function md_tomcat(){
+    if (( $# != 2 )); then
+        echo "Usage:  md tomcat <port> <version>";
+    else
+        docker run -dit --name tomcat-$2 -v `pwd`:/var/www/html -p $1:8080 tomcat:$2;
+        if (( $? == 0 ));then
+            open -a "Google Chrome" "http://localhost:$1";
+        fi
+    fi
+}
 
 function md:usage(){
-    echo "Usage:  me COMMAND
+    echo "Usage:  md COMMAND
             
-    Make a BRAND NEW CLEAN SELF DESTRUCTION environment or mads' env, whatever :)
+    Make a BRAND NEW CLEAN SELF DESTRUCTION DOCKER environment (not f**k in CN), whatever :)
 
     COMMANDS:
     php     make php environment.
+    tomcat  make tomcat environment.
     pwn     make pwn environment.
     stego   make stego environment.
-    kali    make kali environment.
     ubuntu  make ubuntu environment.
     con     make a container with volumns.
     ";
