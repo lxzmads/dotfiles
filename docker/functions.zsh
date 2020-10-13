@@ -66,8 +66,8 @@ function md(){
         case $1 in 
             php)
                 md_php $2 $3;;     
-            kali)
-                md_kali;;
+            tomcat)
+                md_tomcat;;
             pwn)
                 md_pwn;;
             stego)
