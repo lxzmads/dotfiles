@@ -67,7 +67,7 @@ function md(){
             php)
                 md_php $2 $3;;     
             tomcat)
-                md_tomcat;;
+                md_tomcat $2 $3;;
             pwn)
                 md_pwn;;
             stego)
