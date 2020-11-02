@@ -1,7 +1,4 @@
 # gitconfig
-[user]
-	name = Shon Lau
-	email = lxzmads@gmail.com
 [github]
     user = lxzmads
 [alias]
@@ -168,3 +165,6 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[user]
+	name = lxzmads
+	email = mad.s@qq.com
