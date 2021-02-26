@@ -6,3 +6,6 @@ vn
 
 # ip
 # curl -s ip.sb > /tmp/myip
+
+# auto-suggestions
+source $DOTFILES/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh

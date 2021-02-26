@@ -1,2 +1,5 @@
+/local/
 /docker/docker.symlink/
 *.swp
+!manifest.cf
+zsh/plugin/
