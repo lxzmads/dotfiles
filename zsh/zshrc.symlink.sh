@@ -19,8 +19,8 @@ do
   source $file
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+# load everything but the path and completion files and iterm2_shell_integration files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh:#*/iterm2_shell_integration.zsh}
 do
   source $file
 done
@@ -35,4 +35,9 @@ do
   source $file
 done
 
+source $DOTFILES/zsh/iterm2_shell_integration.zsh
+
 unset config_files
+
+
+

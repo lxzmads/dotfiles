@@ -33,3 +33,7 @@ zle -N edit-command-line
 bindkey '^Xe' edit-command-line
 
 unsetopt correct
+
+# iterm2 tab color
+
+HOSTCOLOR="272B33"
