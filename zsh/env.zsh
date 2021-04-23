@@ -1,6 +1,6 @@
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
-export LC_ALL='en_US.UTF-8';
+#export LC_ALL='en_US.UTF-8';
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}"
@@ -16,3 +16,7 @@ export PATH="/opt/apache-maven/bin:$PATH"
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home"
+
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+export CGO_CPPFLAGS="-Wno-error -Wno-nullability-completeness -Wno-expansion-to-defined -Wbuiltin-requires-header"
