@@ -14,9 +14,6 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/opt/apache-maven/bin:$PATH"
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home"
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-
-export CGO_CPPFLAGS="-Wno-error -Wno-nullability-completeness -Wno-expansion-to-defined -Wbuiltin-requires-header"
