@@ -1,3 +1,3 @@
 [user]
-	name = lxzmads
+	name = 6237onbash
 	email = lxzmads@gmail.com

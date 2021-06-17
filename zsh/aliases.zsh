@@ -13,14 +13,15 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+if [[ "$(uname)" == "Darwin" ]] ; then
 alias pl="cd $HOME_DOCPREFIX/YARD/"
 alias pj="cd $HOME_DOCPREFIX/EGGSPACE/Project/"
 alias gg="cd $HOME_DOCPREFIX/EGGSPACE"
 alias tt="cd $HOME_DOCPREFIX/EGGSPACE/Test"
-alias blog="cd $HOME_DOCPREFIX/STUDY/Projects/My/blog"
 alias ctf="cd $HOME_DOCPREFIX/CTFROOM/2021/"
 alias ctool="cd $HOME_DOCPREFIX/TOOLSROOM/ctftools/web"
 alias d="cd $HOME_DOCPREFIX/"
+fi
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias sc="rsync -e ssh -avh --delete --no-owner --no-group"
