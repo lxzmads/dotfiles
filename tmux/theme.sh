@@ -18,14 +18,16 @@ set -g status-interval 5
 
 # default statusbar colors
 # set-option -g status-bg colour0
-set-option -g status-fg $tm_color_active
-set-option -g status-bg default
-set-option -g status-attr default
+#set-option -g status-fg $tm_color_active
+#set-option -g status-bg default
+#set-option -g status-attr default
+set -g status-style fg=$tm_color_active,bg=default,default
 
 # default window title colors
-set-window-option -g window-status-fg $tm_color_inactive
-set-window-option -g window-status-bg default
+#set-window-option -g window-status-fg $tm_color_inactive
+#set-window-option -g window-status-bg default
 set -g window-status-format "#I #W"
+set -g window-status-style fg=$tm_color_inactive,bg=default
 
 # active window title colors
 set-window-option -g window-status-current-fg $tm_color_active
