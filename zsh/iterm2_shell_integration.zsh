@@ -104,6 +104,7 @@ if [[ -o interactive ]]; then
     iterm2_decorate_prompt() {
       # This should be a raw PS1 without iTerm2's stuff. It could be changed during command
       # execution.
+      it2-tab-color $HOST_COLOR
       ITERM2_PRECMD_PS1="$PS1"
       ITERM2_SHOULD_DECORATE_PROMPT=""
 
@@ -135,7 +136,6 @@ if [[ -o interactive ]]; then
       fi
     
       # change tab color
-      it2-tab-color $HOSTCOLOR
     }
 
     # This is not run if you press ^C while entering a command.
