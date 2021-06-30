@@ -18,29 +18,21 @@ set -g status-interval 5
 
 # default statusbar colors
 # set-option -g status-bg colour0
-#set-option -g status-fg $tm_color_active
-#set-option -g status-bg default
-#set-option -g status-attr default
 set -g status-style fg=$tm_color_active,bg=default,default
 
 # default window title colors
-#set-window-option -g window-status-fg $tm_color_inactive
-#set-window-option -g window-status-bg default
 set -g window-status-format "#I #W"
 set -g window-status-style fg=$tm_color_inactive,bg=default
 
 # active window title colors
-set-window-option -g window-status-current-fg $tm_color_active
-set-window-option -g window-status-current-bg default
 set-window-option -g  window-status-current-format "#[bold]#I #W"
+set -g window-status-current-style fg=$tm_color_active,bg=default
 
 # pane border
-set-option -g pane-border-fg $tm_color_inactive
-set-option -g pane-active-border-fg $tm_active_border_color
+set -g pane-border-style fg=$tm_color_inactive,fg=$tm_active_border_color
 
 # message text
-set-option -g message-bg default
-set-option -g message-fg $tm_color_active
+set -g message-style bg=default,fg=$tm_color_active
 
 # pane number display
 set-option -g display-panes-active-colour $tm_color_active
