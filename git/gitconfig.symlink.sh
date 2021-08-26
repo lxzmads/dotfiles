@@ -1,5 +1,5 @@
 [user]
-	name = 6237onbash
+	name = lxzmads
 	email = lxzmads@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
