@@ -1,4 +1,4 @@
-export LSCOLORS="ExGxFxdaCxDaDahbadeche"
+export LSCOLORS="fxdxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 HISTFILE=~/.zsh_history

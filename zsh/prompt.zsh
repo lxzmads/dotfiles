@@ -9,7 +9,7 @@ _backwardtime=$'\033[2D'
 git_prompt_info () {
     ref=$(git symbolic-ref HEAD 2>/dev/null)
     # echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
-    echo " %F{215}${ref#refs/heads/}%f"
+    echo " %F{green}${ref#refs/heads/}%f"
 }
 
 setopt promptsubst
@@ -18,4 +18,4 @@ RPROMPT='%(?..%F{red}-> %?%f)'
 
 # Allow exported PS1 variable to override default prompt.
 
-PROMPT='%F{32}%T%f %F{yellow}%n%f%F{70}@%m%f %f%F{cyan}%~%f$(git_prompt_info)${_newline}%f%F{32}%#%f '
+PROMPT='%F{0}%T%f %F{yellow}%n%f%F{red}@%m%f %f%F{0}%~%f$(git_prompt_info)${_newline}%f%F{green}%#%f '
