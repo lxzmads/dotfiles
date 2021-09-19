@@ -1,5 +1,5 @@
 da(){
-  docker exec -it $1 bash
+  docker exec -it $1 sh
 }
 de(){
     docker exec $1 $2
