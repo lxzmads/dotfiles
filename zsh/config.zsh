@@ -33,3 +33,5 @@ zle -N edit-command-line
 bindkey '^Xe' edit-command-line
 
 unsetopt correct
+export HOSTCOLOR0=209
+export HOSTCOLOR1=ff875f
