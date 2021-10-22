@@ -38,7 +38,3 @@ done
 source $DOTFILES/zsh/iterm2_shell_integration.zsh
 
 unset config_files
-
-
-
-. "/Users/mads/.acme.sh/acme.sh.env"
