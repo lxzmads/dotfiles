@@ -14,12 +14,11 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 if [[ "$(uname)" == "Darwin" ]] ; then
-alias pl="cd $HOME_DOCPREFIX/YARD/"
-alias pj="cd $HOME_DOCPREFIX/EGGSPACE/Project/"
-alias gg="cd $HOME_DOCPREFIX/EGGSPACE"
-alias tt="cd $HOME_DOCPREFIX/EGGSPACE/Test"
-alias ctf="cd $HOME_DOCPREFIX/CTFROOM/2021/"
-alias ctool="cd $HOME_DOCPREFIX/TOOLSROOM/ctftools/web"
+alias pl="cd $HOME_DOCPREFIX/tmp/"
+alias gg="cd $HOME_DOCPREFIX/W"
+alias tt="cd $HOME_DOCPREFIX/W/Tests"
+alias ctf="cd $HOME_DOCPREFIX/X/CTF/2021/"
+alias ctool="cd $HOME_DOCPREFIX/bin/sec/web"
 alias d="cd $HOME_DOCPREFIX/"
 fi
 alias dl="cd ~/Downloads"
