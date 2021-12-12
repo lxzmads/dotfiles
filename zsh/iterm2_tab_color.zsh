@@ -18,3 +18,5 @@ iterm2_print_user_vars() {
         IT2_TAB_COLOR=1
       fi
 }
+# hook ssh for color reset when session returns
+alias ssh="unset IT2_TAB_COLOR;ssh"
