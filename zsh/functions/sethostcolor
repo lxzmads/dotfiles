@@ -15,13 +15,13 @@ B="$((16#${hex:4}))"
 if [[ -z $c1 ]]; then
     echo "invalid selection"
 else
-    sed -i "/HOSTCOLOR0/d" $DOTFILES/zsh/config.zsh
-    sed -i "/HOSTCOLORR/d" $DOTFILES/zsh/config.zsh
-    sed -i "/HOSTCOLORG/d" $DOTFILES/zsh/config.zsh
-    sed -i "/HOSTCOLORB/d" $DOTFILES/zsh/config.zsh
-    echo "export HOSTCOLOR0=$c0" >> $DOTFILES/zsh/config.zsh
-    echo "export HOSTCOLORR='$R'" >> $DOTFILES/zsh/config.zsh
-    echo "export HOSTCOLORG='$G'" >> $DOTFILES/zsh/config.zsh
-    echo "export HOSTCOLORB='$B'" >> $DOTFILES/zsh/config.zsh
+    sed -i "/HOSTCOLOR0/d" ~/.localrc
+    sed -i "/HOSTCOLORR/d" ~/.localrc
+    sed -i "/HOSTCOLORG/d" ~/.localrc
+    sed -i "/HOSTCOLORB/d" ~/.localrc
+    echo "export HOSTCOLOR0=$c0" >> ~/.localrc
+    echo "export HOSTCOLORR='$R'" >> ~/.localrc
+    echo "export HOSTCOLORG='$G'" >> ~/.localrc
+    echo "export HOSTCOLORB='$B'" >> ~/.localrc
     exec $SHELL
 fi

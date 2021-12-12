@@ -34,7 +34,4 @@ bindkey '^Xe' edit-command-line
 
 unsetopt correct
 
-export HOSTCOLOR0=035
-export HOSTCOLORR='0'
-export HOSTCOLORG='175'
-export HOSTCOLORB='95'
+
