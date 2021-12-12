@@ -1,5 +1,5 @@
 /local/
-/docker/docker.symlink/
 *.swp
 !manifest.cf
 zsh/plugins/
+.DS_Store
