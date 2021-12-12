@@ -11,19 +11,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-it2-tab-color() {
-    # takes 1 hex string argument or 3 hex values for RGB
-    # echo $IT2_SESSION_COLOR
-    local R G B
-    R="$1"
-    G="$2"
-    B="$3"
-    echo -ne "\033]6;1;bg;*;default\a"
-    echo -ne "\033]6;1;bg;red;brightness;$R\a"
-    echo -ne "\033]6;1;bg;green;brightness;$G\a"
-    echo -ne "\033]6;1;bg;blue;brightness;$B\a"
-    # Export environment variable to maintain colors during session
-}
+
 if [[ -o interactive ]]; then
   if [ "${ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX-}""$TERM" != "screen" -a "${ITERM_SHELL_INTEGRATION_INSTALLED-}" = "" -a "$TERM" != linux -a "$TERM" != dumb ]; then
     ITERM_SHELL_INTEGRATION_INSTALLED=Yes
@@ -146,7 +134,6 @@ if [[ -o interactive ]]; then
         iterm2_decorate_prompt
       fi
 
-      # change tab color
     }
 
     # This is not run if you press ^C while entering a command.
@@ -180,7 +167,6 @@ if [[ -o interactive ]]; then
     iterm2_print_state_data
     printf "\033]1337;ShellIntegrationVersion=12;shell=zsh\007"
 
-    it2-tab-color $HOSTCOLORR $HOSTCOLORG $HOSTCOLORB
 
   fi
 fi

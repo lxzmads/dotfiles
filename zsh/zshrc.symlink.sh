@@ -36,5 +36,6 @@ do
 done
 
 source $DOTFILES/zsh/iterm2_shell_integration.zsh
+source $DOTFILES/zsh/iterm2_tab_color.zsh
 
 unset config_files

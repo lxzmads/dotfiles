@@ -17,5 +17,5 @@ setopt promptsubst
 RPROMPT='%(?..%F{red}-> %?%f)'
 
 # Allow exported PS1 variable to override default prompt.
-
-PROMPT='%F{0}%T%f %F{yellow}%n%f%F{$HOSTCOLOR0}@%m%f %f%F{0}%~%f$(git_prompt_info)${_newline}%f%F{green}%#%f '
+ITERM2_SQUELCH_MARK="1"
+PS1='%F{0}%T%f %F{yellow}%n%f%F{$HOSTCOLOR0}@%m%f %f%F{0}%~%f$(git_prompt_info)${_newline}%{$(iterm2_prompt_mark)%}%f%F{green}%#%f '
