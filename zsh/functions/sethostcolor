@@ -5,14 +5,14 @@ echo -n "\n\nselect your host color: "
 read s
 
 c0=$s
-c1=${colors${s}]}
+c1=${colors[$s]}
 local hex=$c1
 # Get hex values for each channel and convert to decimal
 R="$((16#${hex:0:2}))"
 G="$((16#${hex:2:2}))"
 B="$((16#${hex:4}))"
 
-if  -z $c1 ]]; then
+if [[ -z $c1 ]]; then
     echo "invalid selection"
 else
     sed -i "/HOSTCOLOR0/d" $DOTFILES/zsh/config.zsh
