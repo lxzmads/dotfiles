@@ -32,6 +32,7 @@ dotfiles::print() {
 # Set the tab color
 it2-tab-color() {
     # takes 1 hex string argument or 3 hex values for RGB
+    # echo $IT2_SESSION_COLOR
     local R G B
     case "$#" in
         3)
@@ -63,7 +64,6 @@ it2-tab-color() {
     echo -ne "\033]6;1;bg;green;brightness;$G\a"
     echo -ne "\033]6;1;bg;blue;brightness;$B\a"
     # Export environment variable to maintain colors during session
-    export IT2_SESSION_COLOR="$R $G $B"
 }
 
 # Reset tab color to default

@@ -6,13 +6,22 @@ read s
 
 c0=$s
 c1=${colors[${s}]}
+local hex=$c1
+# Get hex values for each channel and convert to decimal
+R="$((16#${hex:0:2}))"
+G="$((16#${hex:2:2}))"
+B="$((16#${hex:4}))"
 
 if [[ -z $c1 ]]; then
     echo "invalid selection"
 else
     sed -i "/HOSTCOLOR0/d" $DOTFILES/zsh/config.zsh
-    sed -i "/HOSTCOLOR1/d" $DOTFILES/zsh/config.zsh
+    sed -i "/HOSTCOLORR/d" $DOTFILES/zsh/config.zsh
+    sed -i "/HOSTCOLORG/d" $DOTFILES/zsh/config.zsh
+    sed -i "/HOSTCOLORB/d" $DOTFILES/zsh/config.zsh
     echo "export HOSTCOLOR0=$c0" >> $DOTFILES/zsh/config.zsh
-    echo "export HOSTCOLOR1=$c1" >> $DOTFILES/zsh/config.zsh
+    echo "export HOSTCOLORR='$R'" >> $DOTFILES/zsh/config.zsh
+    echo "export HOSTCOLORG='$G'" >> $DOTFILES/zsh/config.zsh
+    echo "export HOSTCOLORB='$B'" >> $DOTFILES/zsh/config.zsh
     exec $SHELL
 fi

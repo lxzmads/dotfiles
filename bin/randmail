@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+import hashlib
+import random
+import re
+import os
+import tempfile
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
+import curses
+from subprocess import call
+from collections import namedtuple
+from string import ascii_lowercase
+EDITOR = os.environ.get('EDITOR', 'vim')
+
+Mail = namedtuple('Mail', ['title', 'sender', 'text'])
+
+MAILCATCH_URL = "http://mailcatch.com/en/temporary-inbox-rss"
+MAILCATCH_MAIL_URL = "http://mailcatch.com/en/temporary-mail-content"
+EMAIL_TEXT = "Your temporary email is: {mail}\n"
+EMAIL_LINE = "{i} | {title} | {sender}"
+
+TAGS = re.compile("""
+(
+    <[a-zA-Z]+[^>]*>
+  | </[a-zA-Z]+[^>]*>
+)""", re.X)
+
+
+class Boxer:
+    def __init__(self, box_name):
+        self.box_name = box_name
+
+    @classmethod
+    def random_box(cls):
+        box_name = ''.join(random.choice(ascii_lowercase) for _ in range(26))
+
+        return cls(box_name)
+
+    def check_rss(self):
+        def parse_item(item):
+            id = urllib.parse.parse_qs(item[1].text)['show'][0]
+            title = item[0].text
+            sender = item[3].text
+            return id, sender, title
+
+        params = urllib.parse.urlencode({'box': self.box_name})
+        text = urllib.request.urlopen(MAILCATCH_URL + '?' + params).read()
+        root = ET.fromstring(text)
+
+        items = root.iter('item')
+        yield from (parse_item(i) for i in items)
+
+    def fetch_mail(self, mail_id):
+        params = urllib.parse.urlencode({'box': self.box_name, 'show': mail_id})
+        text = urllib.request.urlopen(MAILCATCH_MAIL_URL + '?' + params).read()
+        text = text.decode('utf-8').rsplit('\n\n', 1)[0]
+        return re.sub(TAGS, '', text).strip()
+
+    @property
+    def address(self):
+        return self.box_name + '@mailcatch.com'
+
+
+def call_editor(text):
+    with tempfile.NamedTemporaryFile(suffix=".tmp", mode='w') as t:
+        t.write(text)
+        t.flush()
+        call([EDITOR, t.name])
+
+
+class suspend_curses():
+    """Context Manager to temporarily leave curses mode"""
+
+    def __enter__(self):
+        curses.endwin()
+
+    def __exit__(self, exc_type, exc_val, tb):
+        newscr = curses.initscr()
+        newscr.refresh()
+        curses.doupdate()
+
+
+def handle_messages(box, known_mail):
+    stdscr.addstr(EMAIL_TEXT.format(mail=box.address))
+    i = 0
+
+    while True:
+        for (m_id, sender, title) in box.check_rss():
+            if m_id in known_mail: continue
+            i += 1
+            text = box.fetch_mail(m_id)
+            known_mail[m_id] = Mail(title, sender, text)
+            known_mail[i] = known_mail[m_id]
+            stdscr.addstr(EMAIL_LINE.format_map(locals()))
+
+        try:
+            c = stdscr.getkey()
+        except:
+            continue
+
+        if c.isdigit():
+            m = known_mail.get(int(c), None)
+            if not m: continue
+            with suspend_curses():
+                call_editor(m.text)
+
+def main(win):
+    global stdscr
+    stdscr = win
+    box = Boxer.random_box()
+    known_mail = {}
+    stdscr.timeout(5000)
+
+    handle_messages(box, known_mail)
+
+if __name__ == '__main__':
+    curses.wrapper(main)
+
