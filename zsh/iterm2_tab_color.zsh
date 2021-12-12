@@ -12,8 +12,9 @@ it2-tab-color() {
     # Export environment variable to maintain colors during session
 }
 iterm2_print_user_vars() {
-      echo $ITERM2_TAB_COLOR
-      # change tab color
-      it2-tab-color $HOSTCOLORR $HOSTCOLORG $HOSTCOLORB
-      ITERM2_TAB_COLOR="$HOSTCOLORR $HOSTCOLORG $HOSTCOLORB"
+      if [ -z $IT2_TAB_COLOR ]; then
+        # change tab color
+        it2-tab-color $HOSTCOLORR $HOSTCOLORG $HOSTCOLORB
+        IT2_TAB_COLOR=1
+      fi
 }
