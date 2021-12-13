@@ -15,10 +15,12 @@ B="$((16#${hex:4}))"
 if [[ -z $c1 ]]; then
     echo "invalid selection"
 else
-    sed -i "/HOSTCOLOR0/d" ~/.localrc
-    sed -i "/HOSTCOLORR/d" ~/.localrc
-    sed -i "/HOSTCOLORG/d" ~/.localrc
-    sed -i "/HOSTCOLORB/d" ~/.localrc
+    if [ -f ~/.localrc ];then
+        sed -i "/HOSTCOLOR0/d" ~/.localrc
+        sed -i "/HOSTCOLORR/d" ~/.localrc
+        sed -i "/HOSTCOLORG/d" ~/.localrc
+        sed -i "/HOSTCOLORB/d" ~/.localrc
+    fi
     echo "export HOSTCOLOR0=$c0" >> ~/.localrc
     echo "export HOSTCOLORR='$R'" >> ~/.localrc
     echo "export HOSTCOLORG='$G'" >> ~/.localrc
