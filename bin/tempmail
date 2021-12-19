@@ -19,7 +19,7 @@ Mail = namedtuple('Mail', ['title', 'sender', 'text'])
 MAILCATCH_URL = "http://mailcatch.com/en/temporary-inbox-rss"
 MAILCATCH_MAIL_URL = "http://mailcatch.com/en/temporary-mail-content"
 EMAIL_TEXT = "Your temporary email is: {mail}\n"
-EMAIL_LINE = "{i} | {title} | {sender}"
+EMAIL_LINE = "{i} | {title} | {sender}\n"
 
 TAGS = re.compile("""
 (
