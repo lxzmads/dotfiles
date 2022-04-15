@@ -17,7 +17,7 @@ if [[ "$(uname)" == "Darwin" ]] ; then
 alias pl="cd $HOME_DOCPREFIX/tmp/"
 alias gg="cd $HOME_DOCPREFIX/W"
 alias tt="cd $HOME_DOCPREFIX/W/Tests"
-alias ctf="cd $HOME_DOCPREFIX/X/CTF/2021/"
+alias ctf="cd $HOME_DOCPREFIX/X/CTF/2022/"
 alias ctool="cd $HOME_DOCPREFIX/bin/sec/web"
 alias d="cd $HOME_DOCPREFIX/"
 fi

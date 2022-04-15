@@ -1,0 +1,3 @@
+username=$(openssl rand -hex 5)
+password="P_"$(openssl rand -hex 7)
+echo "user: "$username"\n""pass: "$password | tee /dev/tty | pbcopy

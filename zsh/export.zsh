@@ -11,3 +11,4 @@ export MANPAGER='less -X';
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$DOTFILES/bin
+export PATH=$PATH:$HOME/codeql-home/codeql/
