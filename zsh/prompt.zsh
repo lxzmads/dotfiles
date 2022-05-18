@@ -18,4 +18,4 @@ RPROMPT='%(?..%F{red}-> %?%f)'
 
 # Allow exported PS1 variable to override default prompt.
 ITERM2_SQUELCH_MARK="1"
-PS1='%F{0}%T%f %F{yellow}%n%f%F{$HOSTCOLOR0}@%m%f %f%F{0}%~%f$(git_prompt_info)${_newline}%{$(iterm2_prompt_mark)%}%f%F{green}%#%f '
+PS1='%F{6}%T%f %F{yellow}%n%f%F{$HOSTCOLOR0}@%m%f %f%F{6}%~%f$(git_prompt_info)${_newline}%{$(iterm2_prompt_mark)%}%f%F{green}%#%f '

@@ -1,0 +1,18 @@
+CWD=`pwd`
+if ! [[ -e .syncenv ]]; then
+    echo "[x] Noooo .syncenv"
+    return 404
+fi
+. $CWD/.syncenv
+
+if [[ -z $SYNC_HOST ]]; then
+    echo "[x] Noooo SYNC_HOST"
+fi
+
+if [[ -z $SYNC_DIR ]]; then
+    echo "[x] Noooo SYNC_DIR"
+fi
+
+echo "[*] Sync to $SYNC_HOST:$SYNC_DIR..."
+
+rsync -av -e ssh --delete --exclude=".syncenv" $CWD/* $SYNC_HOST:$SYNC_DIR

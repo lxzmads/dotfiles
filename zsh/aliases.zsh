@@ -14,6 +14,7 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 if [[ "$(uname)" == "Darwin" ]] ; then
+alias sub="cd $HOME_DOCPREFIX/网络/sub/"
 alias pl="cd $HOME_DOCPREFIX/tmp/"
 alias ctf="cd $HOME_DOCPREFIX/安全/CTF/2022/"
 alias ctool="cd $HOME_DOCPREFIX/bin/sec/web"
@@ -95,4 +96,5 @@ done
 alias note="open -a Typora '/Users/mads/Library/Mobile Documents/com~apple~CloudDocs/TypoNote/Notebooks/'"
 
 # shortcut
-alias genpass="openssl rand -base64 16 | tee /dev/tty | pbcopy"
+alias genpass="openssl rand -base64 10 | tee /dev/tty | pbcopy"
+

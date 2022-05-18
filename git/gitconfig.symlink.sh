@@ -10,3 +10,4 @@
 	postBuffer = 524288000
 [core]
 	precomposeUnicode = true
+	quotepath = false

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+name=$(random_username 1)
+pass=$(passwordgenerator -e 3)
+date=$(date)
+echo -e "$name\t$pass\t$date" | tee /dev/tty | pbcopy
+
