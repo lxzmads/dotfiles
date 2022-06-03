@@ -14,7 +14,7 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 if [[ "$(uname)" == "Darwin" ]] ; then
-alias sub="cd $HOME_DOCPREFIX/网络/sub/"
+alias sub="cd $HOME_DOCPREFIX/项目/sub"
 alias pl="cd $HOME_DOCPREFIX/tmp/"
 alias ctf="cd $HOME_DOCPREFIX/安全/CTF/2022/"
 alias ctool="cd $HOME_DOCPREFIX/bin/sec/web"
@@ -56,6 +56,7 @@ alias pcat='pygmentize -f terminal256 -O style=native -g'
 
 # For Cross Site Script Test
 alias xsschrome="chromekill && '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --disable-xss-auditor --enable-devtools-experiments --disable-features=enable-automatic-password-saving"
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 fi
 # IP addresses
 alias localip="hostname -I"

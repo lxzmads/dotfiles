@@ -7,12 +7,24 @@ fi
 
 if [[ -z $SYNC_HOST ]]; then
     echo "[x] Noooo SYNC_HOST"
+    return 404
 fi
 
 if [[ -z $SYNC_DIR ]]; then
     echo "[x] Noooo SYNC_DIR"
+    return 404
 fi
+
+if [[ -z $SYNC_EXCLUDE ]]; then
+    SYNC_EXCLUDE=""
+fi
+
+SYNC_DEL=""
+if ! [[ -z $SYNC_DEL ]]; then
+    SYNC_DEL="--delete"
+fi
+
 
 echo "[*] Sync to $SYNC_HOST:$SYNC_DIR..."
 
-rsync -av -e ssh --delete --exclude=".syncenv" $CWD/* $SYNC_HOST:$SYNC_DIR
+rsync -rlptDv -e ssh $SYNC_DEL --exclude=".syncenv" --exclude=$SYNC_EXCLUDE $CWD/* $SYNC_HOST:$SYNC_DIR
