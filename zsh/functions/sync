@@ -19,12 +19,17 @@ if [[ -z $SYNC_EXCLUDE ]]; then
     SYNC_EXCLUDE=""
 fi
 
+if [[ -z $SYNC_EXCLUDE_FROM ]]; then
+    SYNC_EXCLUDE_FROM=""
+fi
+
 SYNC_DEL=""
 if ! [[ -z $SYNC_DEL ]]; then
     SYNC_DEL="--delete"
 fi
 
 
+
 echo "[*] Sync to $SYNC_HOST:$SYNC_DIR..."
 
-rsync -rlptDv -e ssh $SYNC_DEL --exclude=".syncenv" --exclude=$SYNC_EXCLUDE $CWD/* $SYNC_HOST:$SYNC_DIR
+rsync -rlptDv -e ssh $SYNC_DEL --exclude=".syncenv" --exclude=$SYNC_EXCLUDE --exclude-from=$SYNC_EXCLUDE_FROM $CWD/* $SYNC_HOST:$SYNC_DIR

@@ -14,10 +14,8 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 if [[ "$(uname)" == "Darwin" ]] ; then
-alias sub="cd $HOME_DOCPREFIX/项目/sub"
-alias pl="cd $HOME_DOCPREFIX/tmp/"
-alias ctf="cd $HOME_DOCPREFIX/安全/CTF/2022/"
-alias ctool="cd $HOME_DOCPREFIX/bin/sec/web"
+alias pl="cd ~/projects/play"
+alias pr="cd ~/projects/"
 alias d="cd $HOME_DOCPREFIX/"
 fi
 alias dl="cd ~/Downloads"
@@ -93,9 +91,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="lwp-request -m '$method'"
 done
 
-# for typora
-alias note="open -a Typora '/Users/mads/Library/Mobile Documents/com~apple~CloudDocs/TypoNote/Notebooks/'"
-
 # shortcut
-alias genpass="openssl rand -base64 10 | tee /dev/tty | pbcopy"
+alias genpass="cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9-_\$' | fold -w 12 | sed 1q | tr -d '\n' | tee /dev/tty | pbcopy"
 
