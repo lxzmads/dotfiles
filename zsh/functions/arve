@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# archive current directory to specific backup space
+if [[ -e ".arve" ]]; then
+  uuid=`cat .arve`;
+else
+  uuid=`uuidgen | tr "[:upper:]" "[:lower:]"`;
+fi
+echo "---\norigin path: $(pwd)\n---" | zip -r $uuid.zip -z -e .
+mv $uuid.zip $HOME_DOCPREFIX/data/backup/
+echo $uuid > .arve

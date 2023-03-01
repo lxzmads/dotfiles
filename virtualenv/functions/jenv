@@ -1,0 +1,11 @@
+# Virtual Java Environment.
+jenv() {
+    export PATH="$HOME/.jenv/bin:$PATH"
+    if command -v $HOME/.jenv/bin/jenv 1>/dev/null 2>&1; then
+        eval "$($HOME/.jenv/bin/jenv init -)"
+    fi
+    $HOME/.jenv/bin/jenv enable-plugin export >/dev/null 2>&1
+    $HOME/.jenv/bin/jenv $@
+}
+
+
