@@ -1,6 +1,8 @@
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # ip
 # curl -s ip.sb > /tmp/myip
 

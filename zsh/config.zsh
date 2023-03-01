@@ -31,6 +31,8 @@ autoload -U select-word-style
 select-word-style bash
 zle -N edit-command-line
 bindkey '^Xe' edit-command-line
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 unsetopt correct
 

@@ -12,3 +12,7 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$DOTFILES/bin
 export PATH=$PATH:$HOME/codeql-home/codeql/
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+export PATH=$PATH:/usr/local/sbt/bin
+export PATH=$PATH:/usr/local/apache-maven-3.8.6/bin
+export PATH=$PATH:$HOME_DOCPREFIX/app/bin

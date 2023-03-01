@@ -14,8 +14,8 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 if [[ "$(uname)" == "Darwin" ]] ; then
-alias pl="cd ~/projects/play"
-alias pr="cd ~/projects/"
+alias tmp="cd $HOME/projects/play"
+alias pr="cd $HOME/projects"
 alias d="cd $HOME_DOCPREFIX/"
 fi
 alias dl="cd ~/Downloads"
@@ -33,6 +33,7 @@ alias rmf="rm -rf"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
 alias du='du -h -c' # calculate disk usage for a folder
+alias inode='node-prototype-repl'
 
 # Applications for Mac
 if [[ "$(uname)" == "Darwin" ]] ; then
