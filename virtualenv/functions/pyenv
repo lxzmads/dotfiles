@@ -5,7 +5,7 @@ pyenv() {
   # export PYENV_DEBUG=1
   if command -v $PYENV_ROOT/bin/pyenv 1>/dev/null 2>&1; then
     eval "$($PYENV_ROOT/bin/pyenv init -)"
-    eval "$($PYENV_ROOT/bin/pyenv virtualenv-init -)"
+    # eval "$($PYENV_ROOT/bin/pyenv virtualenv-init -)"
   fi
-  pyenv $@
+  $PYENV_ROOT/bin/pyenv $@
 }
