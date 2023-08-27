@@ -45,6 +45,7 @@ if [[ -o interactive ]]; then
       printf "\033]1337;RemoteHost=%s@%s\007" "$USER" "${_iterm2_hostname-}"
       printf "\033]1337;CurrentDir=%s\007" "$PWD"
       iterm2_print_user_vars
+      iterm2_set_user_var python_venv $([ -v PYENV_VERSION ] && (echo $PYENV_VERSION) || (cat ~/.pyenv/version))
     }
 
     # Report return code of command; runs after command finishes but before prompt

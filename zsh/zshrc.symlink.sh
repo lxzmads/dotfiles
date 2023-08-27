@@ -43,3 +43,8 @@ unset config_files
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#iterm2_print_user_vars()
+#{
+#    iterm2_set_user_var python_venv $([ -v PYENV_VERSION ] && (echo $PYENV_VERSION) || (cat ~/.pyenv/version))
+#}
