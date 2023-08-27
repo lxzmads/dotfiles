@@ -3545,11 +3545,11 @@
 				<key>Alpha Component</key>
 				<real>0.5</real>
 				<key>Blue Component</key>
-				<real>0.867034912109375</real>
+				<real>0.8286895751953125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.83417183347046375</real>
+				<real>0.53310474380850792</real>
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
@@ -3603,18 +3603,18 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.43921568989753723</real>
+				<real>0.0</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.51372551918029785</real>
+				<real>0.80000001192092896</real>
 				<key>Red Component</key>
-				<real>0.94117647409439087</real>
+				<real>0.99999994039535522</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.02117919921875</real>
+				<real>0.25</real>
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Color Space</key>
@@ -4216,13 +4216,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.43915912508964539</real>
+				<real>0.32156860828399658</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.38826006650924683</real>
+				<real>0.26666668057441711</real>
 				<key>Red Component</key>
-				<real>0.36074250936508179</real>
+				<real>0.24313730001449585</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -4623,13 +4623,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.5044867992401123</real>
+				<real>0.20392155647277832</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.35965056240243742</real>
+				<real>0.17254900932312012</real>
 				<key>Red Component</key>
-				<real>0.34926008232921535</real>
+				<real>0.15686270594596863</real>
 			</dict>
 			<key>Tags</key>
 			<array/>
