@@ -16,3 +16,4 @@ export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export PATH=$PATH:/usr/local/sbt/bin
 export PATH=$PATH:/usr/local/apache-maven-3.8.6/bin
 export PATH=$PATH:$HOME_DOCPREFIX/app/bin
+export PATH=$PATH:/opt/homebrew/bin

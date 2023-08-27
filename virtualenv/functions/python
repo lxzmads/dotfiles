@@ -1,6 +1,6 @@
 # Virtual Python Environment.
-pyenv() {
-  unset -f pyenv
+python() {
+  unset -f python
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
   # export PYENV_DEBUG=1
@@ -8,5 +8,6 @@ pyenv() {
     eval "$($PYENV_ROOT/bin/pyenv init -)"
     # eval "$($PYENV_ROOT/bin/pyenv virtualenv-init -)"
   fi
-  $PYENV_ROOT/bin/pyenv $@
+  $PYENV_ROOT/shims/python $@
 }
+

@@ -8,6 +8,14 @@ function dsm(){ docker stop $1 && docker rm $1 || echo "failed!!!";}
 function mc(){ ssh root@$1 }
 function md_con() { docker run -it --rm -v `pwd`:/data -w /data $1 }
 function md_ubuntu() { docker run -it --rm -v `pwd`:/data -w /data ubuntu:$1 }
+function md_neo() {
+    docker ps -a -f 'name=ubuntu_neo' | grep ubuntu_neo >/dev/null
+    if (( $? == 0 ));then
+        docker start ubuntu_neo >/dev/null && docker exec -it ubuntu_neo /bin/zsh
+    else
+        docker run -it -v `pwd`:/data -w /data --name ubuntu_neo --entrypoint /bin/zsh ubuntu:neo
+    fi
+}
 function md_stego() { docker run -it --rm -p 127.0.0.1:6901:6901 -v `pwd`:/data dominicbreuker/stego-toolkit bash }
 function md_pwn(){
     docker run -it --rm -v `pwd`:/ctf/work -p23946:23946 --cap-add=SYS_PTRACE lxzmads/pwndbgenv:14.04
@@ -68,6 +76,8 @@ function md(){
                 md_stego;;
             ubuntu)
                 md_ubuntu $2;;
+            neo)
+                md_neo $2;;
             con)
                 md_con $2;;
             *)
