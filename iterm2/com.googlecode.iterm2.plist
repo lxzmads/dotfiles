@@ -4691,7 +4691,7 @@
 			<key>Window Type</key>
 			<integer>12</integer>
 			<key>Working Directory</key>
-			<string>/Users/mads/Downloads</string>
+			<string></string>
 		</dict>
 	</array>
 	<key>OpenArrangementAtStartup</key>
