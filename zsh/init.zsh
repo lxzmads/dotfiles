@@ -9,3 +9,6 @@
 # auto-suggestions
 # source $DOTFILES/zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $DOTFILES/zsh/iterm2_shell_integration.zsh
+# 忽略 compaudit 的权限检查，防止报错
+autoload -Uz compinit
+compinit -u

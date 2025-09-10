@@ -14,8 +14,8 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 if [[ "$(uname)" == "Darwin" ]] ; then
-alias tmp="cd $HOME/projects/play"
-alias pr="cd $HOME/projects"
+alias tmp="cd $HOME/Projects/Playground"
+alias pr="cd $HOME/Projects"
 alias d="cd $HOME_DOCPREFIX/"
 fi
 alias dl="cd ~/Downloads"

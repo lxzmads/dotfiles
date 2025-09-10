@@ -80,3 +80,9 @@ set scrolloff=3
 set shiftwidth=4
 set ts=4
 set smartindent
+
+call plug#begin()
+  Plug 'preservim/nerdtree'
+call plug#end()
+" 设置快捷键 <C-n> (Ctrl + n) 来切换 NERDTree 的显示和隐藏
+nnoremap <C-b> :NERDTreeToggle<CR>

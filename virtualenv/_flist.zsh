@@ -1,1 +1,1 @@
-autoload -Uz vl vo jenv pyenv python
+autoload -Uz jenv
