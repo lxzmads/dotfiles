@@ -67,3 +67,5 @@ unset __conda_setup
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+. "$HOME/.local/bin/env"

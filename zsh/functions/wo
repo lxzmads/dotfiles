@@ -1,0 +1,1 @@
+function wo() { if [ -n "$1" ]; then WORKDIR="$1"; elif [ -n "$WORKDIR" ]; then cd "$WORKDIR"; else echo "usage: set_workdir <directory>"; fi }
