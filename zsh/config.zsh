@@ -1,4 +1,4 @@
-export LSCOLORS="fxdxcxdxbxegedabagacad"
+export LSCOLORS="exdxcxdxcxegedabagacad"
 export CLICOLOR=true
 
 HISTFILE=~/.zsh_history
@@ -35,5 +35,4 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
 unsetopt correct
-
 

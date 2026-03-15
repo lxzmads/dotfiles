@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/admin/.zsh/completions:"* ]]; then export FPATH="/Users/admin/.zsh/completions:$FPATH"; fi
 # shortcut to this dotfiles path is $ZSH
 export DOTFILES=$HOME/.dots
 
@@ -19,9 +21,10 @@ do
   source $file
 done
 
-# load everything but the path and completion files and iterm2_shell_integration files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh:#*/iterm2_shell_integration.zsh}
+# load everything but the path, completion, and iTerm2 integration files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
+  [[ "$file" == */iterm2_shell_integration.zsh ]] && continue
   source $file
 done
 
@@ -35,7 +38,9 @@ do
   source $file
 done
 
-source $DOTFILES/zsh/iterm2_shell_integration.zsh
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+  source $DOTFILES/zsh/iterm2_shell_integration.zsh
+fi
 
 unset config_files
 
@@ -62,6 +67,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+conda activate base
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -69,3 +75,10 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 . "$HOME/.local/bin/env"
+
+. "/Users/admin/.deno/env"
+# Added by Antigravity
+export PATH="/Users/admin/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/admin/.opencode/bin:$PATH

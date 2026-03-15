@@ -10,6 +10,7 @@ export MANPAGER='less -X';
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$DOTFILES/bin
 export PATH=$PATH:$HOME/codeql-home/codeql/
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
@@ -22,3 +23,5 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/Volumes/ext/apps/bin:$PATH"
+export PATH="/opt/homebrew/opt/openvpn/sbin:$PATH"
